@@ -1,14 +1,38 @@
+/*  Applied through out file  */
 * {
   font-family: SF-Fortune-Wheel;
   font-size: 16px;
   box-sizing: border-box;
 }
 
+/*  Imported font  */
 @font-face {
   font-family: SF-Fortune-Wheel;
   src: url(fortunewheel/SF-Fortune-Wheel.ttf)
 }
 
+/* Welcome page styling */
+.main-title {
+  margin: 0 auto; 
+}
+
+.player-input-form {
+  height: 200px; 
+  width: 150px; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+form input {
+  height: 50px; 
+  margin-bottom: 10px; 
+}
+
+form button {
+  height: 40px; 
+}
+
+/* Puzzle board  */
 .top-row {
   display: flex;
 }
@@ -30,11 +54,14 @@
   margin-left: 50px;
 }
 
+/* User interaction elements */
+
 .keyboard-button {
   height: 40px;
   width: 40px;
 }
 
+/* Player information  */
 .player-area {
   display: flex;
   justify-content: space-around;
