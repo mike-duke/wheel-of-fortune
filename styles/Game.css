@@ -1,8 +1,49 @@
 * {
-
+  font-family: SF-Fortune-Wheel;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 @font-face {
-  font-family: SF Fortune Wheel;
+  font-family: SF-Fortune-Wheel;
   src: url(fortunewheel/SF-Fortune-Wheel.ttf)
+}
+
+.top-row {
+  display: flex;
+}
+
+.board {
+  background: #00b784;
+  padding: 50px;
+}
+
+.puzzle-square {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  background: #FFF
+}
+
+.puzzle-row {
+  display: flex;
+  margin-left: 50px;
+}
+
+.keyboard-button {
+  height: 40px;
+  width: 40px;
+}
+
+.player-area {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.player-area article {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
 }
