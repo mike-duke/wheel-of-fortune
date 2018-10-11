@@ -33,8 +33,12 @@ form button {
 }
 
 /* Puzzle board  */
+.category {
+  text-align: center; 
+}
 .top-row {
   display: flex;
+  justify-content: space-between
 }
 
 .board {
@@ -42,20 +46,40 @@ form button {
   padding: 50px;
 }
 
+.instruction-text {
+  text-align: center; 
+}
+
 .puzzle-square {
-  height: 100px;
-  width: 100px;
-  border: 2px solid black;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
   background: #FFF
 }
 
 .puzzle-row {
   display: flex;
-  margin-left: 50px;
+  justify-content: center; 
 }
 
 /* User interaction elements */
 
+.wheel-container {
+  display: flex; 
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.guess-input {
+  display: flex; 
+  justify-content: space-around; 
+  margin-bottom: 5px; 
+}
+
+.keyboard {
+  display: flex; 
+  justify-content: center; 
+}
 .keyboard-button {
   height: 40px;
   width: 40px;
@@ -70,7 +94,7 @@ form button {
 
 .player-area article {
   height: 50px;
-  width: 50px;
+  width: 80px;
   display: flex;
   flex-direction: column;
 }
