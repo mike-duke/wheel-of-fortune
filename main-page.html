@@ -29,9 +29,12 @@
 
     </article>
     <section class="board">
+     <div class="category-container">
       <h3 class="category">Category:
         <span class="category-name">stuff!</span>
       </h3>
+    </div>
+    <div class="puzzle-container">
       <div class="puzzle-row first-row">
         <div class="puzzle-square box1"></div>
         <div class="puzzle-square box2"></div>
@@ -80,18 +83,24 @@
         <div class="puzzle-square box39"></div>
         <div class="puzzle-square box40"></div>
       </div>
+    </div>
+      <article class="wheel-container">
+          <h2 class="wheel-output">$$</h2>
+          <button class="spin-button">Spin the Wheel!</button>
+        </article>
     </section>
-    <article class="wheel-container">
-      <h2 class="wheel-output">$$</h2>
-      <button class="spin-button">Spin the Wheel!</button>
-    </article>
     <article class="guess-input">
-      <label for="vowel-button">Buy A Vowel!</label>
-      <button id="vowel-button">$100</button>
-      <label for="solution-input">Solve the Puzzle</label>
-      <input id="solution-input" placeholder="Enter Your Guess!">
-      <button class="solution-input-button">Solve!</button>
+      <div class="vowel-container">
+        <label for="vowel-button">Buy A Vowel!</label>
+        <button id="vowel-button">$100</button>
+      </div>
+      <div class="solution-container">
+        <label for="solution-input">Solve the Puzzle</label>
+        <input id="solution-input" placeholder="Enter Your Guess!">
+        <button class="solution-input-button">Solve!</button>
+    </div>
     </article>
+    <h4 class="instruction-text">Play The Game!</h4>
     <section class="keyboard">
       <button class="keyboard-button letterA" disabled>A</button>
       <button class="keyboard-button letterB">B</button>
@@ -122,7 +131,6 @@
     </section>
 
     <section class="player-area">
-      <h4 class="instruction-text">Play The Game!</h4>
       <article class="player1">
         <h3>Player 1</h3>
         <p class="score player1-score">0</p>

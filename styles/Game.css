@@ -33,28 +33,44 @@ form button {
 }
 
 /* Puzzle board  */
-.category {
-  text-align: center; 
+.category-container {
+  grid-area: category; 
+  width: 100%; 
 }
+.category {
+  text-align: center;  
+  margin: 0; 
+}
+
 .top-row {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between; 
 }
 
 .board {
   background: #00b784;
-  padding: 50px;
+  padding: 10px;
+  display: grid; 
+  grid-template-areas: "category category"
+                        "puzzle wheel"; 
 }
 
 .instruction-text {
   text-align: center; 
 }
 
+.puzzle-container {
+  grid-area: puzzle;
+  width: 50%; 
+}
+
 .puzzle-square {
   height: 50px;
   width: 50px;
   border: 1px solid black;
-  background: #FFF
+  background: #FFF; 
+  margin: 2px; 
+  border-radius: 20%; 
 }
 
 .puzzle-row {
@@ -63,13 +79,6 @@ form button {
 }
 
 /* User interaction elements */
-
-.wheel-container {
-  display: flex; 
-  justify-content: space-around;
-  margin-bottom: 5px;
-}
-
 .guess-input {
   display: flex; 
   justify-content: space-around; 
@@ -97,4 +106,12 @@ form button {
   width: 80px;
   display: flex;
   flex-direction: column;
+}
+
+/* Wheel */
+.wheel-container {
+  display: flex; 
+  flex-direction: column;
+  grid-area: wheel;  
+  width: 50%; 
 }
