@@ -2,8 +2,10 @@ const chai = require('chai');
 const expect = chai.expect;
 const Game = require('../lib/Game.js');
 // const spies = require('chai-spies');
+// chai.use(spies);
 
-// global.domUpdates = require('../lib/domUpdates.js')
+// global.domUpdates = require('../lib/domUpdates.js');
+// chai.spy.on(global.domUpdates, [], () => true);
 
 describe('Game', function() {
 
