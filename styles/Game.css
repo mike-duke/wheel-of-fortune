@@ -1,4 +1,5 @@
 /*  Applied through out file  */
+
 * {
   font-family: SF-Fortune-Wheel;
   font-size: 16px;
@@ -6,95 +7,128 @@
 }
 
 /*  Imported font  */
+
 @font-face {
   font-family: SF-Fortune-Wheel;
   src: url(fortunewheel/SF-Fortune-Wheel.ttf)
 }
 
 /* Welcome page styling */
+
+.new-game-screen-container {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.new-game-screen {
+  text-align: center;
+  position: absolute;
+  background: #FFF;
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 25%;
+  left: 25%;
+  z-index: 2;
+}
+
 .main-title {
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .player-input-form {
-  height: 200px; 
-  width: 150px; 
-  display: flex; 
-  flex-direction: column; 
+  height: 200px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
 }
 
 form input {
-  height: 50px; 
-  margin-bottom: 10px; 
+  height: 50px;
+  margin-bottom: 10px;
 }
 
 form button {
-  height: 40px; 
+  height: 40px;
 }
 
 /* Puzzle board  */
+
 .category-container {
-  grid-area: category; 
-  width: 100%; 
+  grid-area: category;
+  width: 100%;
 }
+
 .category {
-  text-align: center;  
-  margin: 0; 
+  text-align: center;
+  margin: 0;
 }
 
 .top-row {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .board {
   background: #00b784;
   padding: 10px;
-  display: grid; 
-  grid-template-areas: "category category"
-                        "puzzle wheel"; 
+  display: grid;
+  grid-template-areas: "category category" "puzzle wheel";
 }
 
 .instruction-text {
-  text-align: center; 
+  text-align: center;
 }
 
 .puzzle-container {
   grid-area: puzzle;
-  width: 50%; 
 }
 
 .puzzle-square {
   height: 50px;
   width: 50px;
   border: 1px solid black;
-  background: #FFF; 
-  margin: 2px; 
-  border-radius: 20%; 
+  background: #FFF;
+  margin: 2px;
+  border-radius: 20%;
 }
 
 .puzzle-row {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 /* User interaction elements */
+
 .guess-input {
-  display: flex; 
-  justify-content: space-around; 
-  margin-bottom: 5px; 
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
 }
 
 .keyboard {
-  display: flex; 
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
 }
+
 .keyboard-button {
   height: 40px;
   width: 40px;
 }
 
 /* Player information  */
+
 .player-area {
   display: flex;
   justify-content: space-around;
@@ -109,9 +143,10 @@ form button {
 }
 
 /* Wheel */
+
 .wheel-container {
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  grid-area: wheel;  
-  width: 50%; 
+  grid-area: wheel;
+  width: 50%;
 }
