@@ -156,13 +156,13 @@ main {
   flex-direction: column;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 10%;
-  padding: 0 10px;
+  padding: 0 10px; 
 }
 
-.player-name {
-  font-family: 'Fortune';
-  color: #e79e22;
-  font-size: 1.7rem;
+ .player-name  {
+    font-family: 'Fortune';
+    color: #e79e22;
+    font-size: 1.7rem;
 }
 
 /* Wheel */
