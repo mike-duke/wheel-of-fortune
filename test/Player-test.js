@@ -19,4 +19,16 @@ it('should instatiate a new Player class', () => {
 expect(player).to.be.an.instanceof(Player); 
 })
 
+it('should be able to guess letters to towards solving the puzzle', () => {
+
+}), 
+
+it('should be able to buy a vowel', () => {
+
+}), 
+
+it('should be able to solve the puzzle', () => {
+    
+})
+
 });
