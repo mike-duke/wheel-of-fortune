@@ -4,7 +4,8 @@
   "description": "\"A game of luck and trivia\" ",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha", 
+    "eslint": "./node_modules/eslint/bin/eslint.js ./lib/*.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-spies": "^1.0.0",
-    "eslint": "^5.6.1",
+    "eslint": "^5.7.0",
     "mocha": "^5.2.0"
   }
 }
