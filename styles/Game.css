@@ -124,6 +124,10 @@ main {
   justify-content: center;
 }
 
+.show-letter {
+  color: red
+}
+
 /* User interaction elements */
 
 .guess-input {
