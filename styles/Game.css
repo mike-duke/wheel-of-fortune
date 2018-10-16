@@ -13,6 +13,17 @@
   box-sizing: border-box;
 }
 
+button {
+  height: 50px;
+  background: #0b68a9;
+  border: 5px solid #FFF;
+  color: #FFF;
+  font-weight: bold;
+  border-radius: 25px;
+  width: 200px;
+  font-size: 1.4rem;
+}
+
 /* Welcome page styling */
 
 .new-game-screen-container {
@@ -32,7 +43,7 @@
   position: absolute;
   background-image: url("wheeloffortune_final_1080.jpg");
   background-size: cover;
-  height: 50%;
+  height: 60%;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -50,24 +61,27 @@
 
 .main-title h2 {
   font-family: 'Fortune';
-  font-size: 2rem;
+  font-size: 4rem;
+  color: #e79e22;
+  margin: 20px;
 }
 
 .player-input-form {
-  height: 200px;
-  width: 150px;
+  height: 250px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
 }
 
+.player-input-form label {
+  font-family: 'Fortune';
+  font-size: 1.5rem;
+}
+
 form input {
   height: 50px;
   margin-bottom: 10px;
-}
-
-form button {
-  height: 40px;
 }
 
 main {
@@ -86,6 +100,15 @@ main {
 .category {
   text-align: center;
   margin: 0;
+  font-family: "Fortune";
+  color: #e79e22;
+  font-size: 2rem;
+}
+
+.category-name {
+  font-family: sans-serif;
+  color: #FFF;
+  font-size: 2rem;
 }
 
 .top-row {
@@ -94,7 +117,7 @@ main {
 }
 
 .board {
-  background: #00b784;
+  background: #319d82;
   padding: 10px;
   display: grid;
   grid-template-areas: "category category" "puzzle wheel";
@@ -109,14 +132,15 @@ main {
 }
 
 .puzzle-square {
-  height: 50px;
-  width: 50px;
+  height: 75px;
+  width: 75px;
   border: 1px solid black;
   background: #FFF;
   margin: 2px;
   border-radius: 20%;
   color: #000; 
   text-align: center; 
+  font-size: 4rem;
 }
 
 .puzzle-row {
@@ -126,6 +150,16 @@ main {
 
 .show-letter {
   color: red
+}
+
+.wheel-img {
+  height: 300px;
+}
+
+.spin-button {
+  position: absolute;
+  top: 24.5%;
+  left: 74%;
 }
 
 /* User interaction elements */
@@ -175,7 +209,20 @@ main {
 
 .wheel-container {
   display: flex;
+  align-items: center;
   flex-direction: column;
   grid-area: wheel;
-  width: 50%;
+  width: 60%;
+  margin-left: 100px;
+}
+
+.wheel-output-container {
+  height: 100px;
+}
+
+.wheel-output {
+  font-family: "Fortune";
+  font-size: 5rem;
+  margin: 10px 0 0;
+  /* color: #e79e22; */
 }
