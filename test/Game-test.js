@@ -21,12 +21,14 @@ describe('Game', function() {
 
   it('should tell a player to spin the wheel when it is their turn', () => {
 
-    game.giveInstructions('Noah'); 
+    // game.giveInstructions('Noah'); 
 
-    expect(game.giveInstructions()).to.equal('Noah Spin the Wheel!'); 
+    // expect(game.giveInstructions()).to.equal('Noah Spin the Wheel!'); 
     
     expect(domUpdates.displayInstructions).to.have.been.called(1); 
     expect(domUpdates.displayInstructions).to.have.been.called.with('Noah Spin the Wheel!'); 
   }); 
+
+  // it('should tell the player ')
 
 })
