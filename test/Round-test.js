@@ -25,8 +25,8 @@ describe('Round', function() {
     
     expect(result).to.equal(700)
     
-    expect(domUpdates.displayWheelValue).to.have.been.called(1); 
-    expect(domUpdates.displayWheelValue).to.have.been.called.with(700)
+    expect(global.domUpdates.displayWheelValue).to.have.been.called(1); 
+    expect(global.domUpdates.displayWheelValue).to.have.been.called.with(700)
   })
 
 })
