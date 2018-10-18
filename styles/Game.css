@@ -8,7 +8,6 @@
 /*  Applied through out file  */
 
 * {
-  /* font-family: sans-serif; */
   font-size: 16px;
   box-sizing: border-box;
 }
@@ -71,7 +70,6 @@ button {
   width: 200px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 .player-input-form label {
@@ -117,7 +115,6 @@ main {
 }
 
 .board {
-  /* background: #319d82; */
   padding: 10px;
   display: grid;
   grid-template-areas: "category category" "puzzle wheel";
@@ -138,7 +135,6 @@ main {
   background: #FFF;
   margin: 2px;
   border-radius: 20%;
-  /* color: #000;  */
   color: #FFF;
   text-align: center; 
   font-size: 4rem;
@@ -204,9 +200,9 @@ main {
 }
 
  .player-name  {
-    font-family: 'Fortune';
-    color: #e79e22;
-    font-size: 1.7rem;
+  font-family: 'Fortune';
+  color: #e79e22;
+  font-size: 1.7rem;
 }
 
 /* Wheel */
@@ -228,7 +224,6 @@ main {
   font-family: "Fortune";
   font-size: 5rem;
   margin: 10px 0 0;
-  /* color: #e79e22; */
 }
 
 .showPuzzleSquare {
