@@ -82,7 +82,7 @@ describe('Game', function () {
 
   it('should end the players turn if they guess a letter that is not in our puzzle', () => {
     let player = new Player('Bob');
-    player.roundScore = 500;
+    game.startRound();
     game.checkLetter({target: {innerText: 'Z'}});
 
     expect(player.isTurn).to.equal(false);
@@ -113,7 +113,7 @@ describe('Game', function () {
   });
 
   it('should end the game if a player quits the game', () => {
-    
+
   });
 
 })

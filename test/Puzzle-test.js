@@ -39,7 +39,8 @@ describe('Puzzle', function() {
   })
 
   it('should have a method to check the player\'s letter guess against the correctAnswer', () => {
-    puzzle.checkLetterGuess({target: {innerText: 'A'}});
+    let event = {target: {innerText: 'A'}}
+    puzzle.checkLetterGuess(event);
 
     expect(puzzle.correctLetters).to.be.an('array').that.includes('A');
   })
