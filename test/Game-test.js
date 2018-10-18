@@ -1,18 +1,17 @@
 const chai = require('chai');
 const expect = chai.expect;
-global.Player = require('../lib/Player.js'); 
-global.Round = require('../lib/Round.js'); 
-global.Wheel = require('../lib/Wheel.js'); 
-global.Puzzle = require('../lib/Puzzle.js'); 
+global.Player = require('../lib/Player.js');
+global.Round = require('../lib/Round.js');
+global.Wheel = require('../lib/Wheel.js');
+global.Puzzle = require('../lib/Puzzle.js');
 global.data = require('../lib/WheelData.js');
 global.domUpdates = require('../lib/domUpdates.js');
-const Game = require('../lib/Game.js'); 
+const Game = require('../lib/Game.js');
 const spies = require('chai-spies');
 chai.use(spies);
+chai.spy.on(global.domUpdates, ['displayInstructions', 'displayPlayerNames', 'displayCategory', 'displayLetter', 'updateRoundScore', 'populatePuzzle', 'displayRound'], () => true);
 
-chai.spy.on(global.domUpdates, ['displayInstructions', 'displayPlayerNames'], () => true);
-
-describe('Game', function() {
+describe('Game', function () {
 
   let game;
 
@@ -22,11 +21,11 @@ describe('Game', function() {
 
   it('should instantiate a new Game class', () => {
     expect(game).to.be.an.instanceof(Game);
-  }); 
+  });
 
-  it('should get players names and give them instructions', () => { 
+  it('should get players names and give them instructions', () => {
 
-    game.getPlayers(['Bob', 'Laura', 'Tina']); 
+    game.getPlayers(['Bob', 'Laura', 'Tina']);
 
     let playerArray = []
     let player1 = new Player('Bob', 'one');
@@ -35,70 +34,86 @@ describe('Game', function() {
     playerArray.push(player1, player2, player3);
 
 
-    expect(domUpdates.displayInstructions).to.have.been.called(1); 
-    expect(domUpdates.displayInstructions).to.have.been.called.with('Bob'); 
-    expect(domUpdates.displayPlayerNames).to.have.been.called(1); 
+    expect(domUpdates.displayInstructions).to.have.been.called(1);
+    expect(domUpdates.displayInstructions).to.have.been.called.with('Bob');
+    expect(domUpdates.displayPlayerNames).to.have.been.called(1);
     // expect(domUpdates.displayPlayerNames).to.have.been.called.with(playerArray); 
-  }); 
+  });
 
   it('should have a bank of puzzles', () => {
-     game.getPuzzleBank(); 
+    game.getPuzzleBank();
 
-    expect(typeof game.puzzleBank).toEqual('object'); 
-  }); 
+    expect(game.puzzleBank).to.be.an('object');
+  });
 
-  it.skip('should start each round with a wheel and puzzle', () => {
+  it('should start each round with a wheel and puzzle', () => {
     game.startRound();
-    let wheel = new Wheel() 
 
+    expect(game.wheel).to.be.an('array');
+    expect(domUpdates.displayCategory).to.have.been.called(1);
+    // expect(domUpdates.displayCategory).to.have.been.called.with('Phrase');
+  });
 
-    expect(domUpdates.displayCategory).to.have.been.called(1); 
-    expect(domUpdates.displayCategory).to.have.been.called.with('Phrase'); 
+  it('should give us a value when we spin the wheel', () => {
+    game.getPlayers(['Bob', 'Laura', 'Tina']);
+    game.startRound();
+    game.spinWheel();
 
-
-  }); 
-
-  it.skip('should give us a value when we spin the wheel', () => {
-
-    let result = game.spinWheel(); 
-
-    expect(result).toEqual(700); 
-    expect(domUpdates.displayWheelValue).to.have.been.called(1); 
-    expect(domUpdates.dislayWheelValue).to.have.been.called.with(700); 
-  }); 
+    expect(game.wheel).to.be.an('array').that.includes(game.currentWheelValue);
+    expect(domUpdates.displayWheelValue).to.have.been.called(1);
+    // expect(domUpdates.dislayWheelValue).to.have.been.called.with(game.currentWheelValue);
+  });
 
   it.skip('should let the player buy a vowel', () => {
-    game.buyAVowel()
+    let player = new Player('Bob');
+    player.roundScore = 500;
+    game.buyAVowel(player)
 
-
-  }); 
+    expect(player.roundScore).to.equal(400)
+  });
 
   it.skip('should update the players round score if they guess a correct letter', () => {
-    
-  }); 
+    let player = new Player('Bob');
+    player.roundScore = 500;
+    game.checkLetter({target: {innerText: 'S'}});
+
+    expect(player.roundScore).to.equal(600);
+  });
 
   it('should end the players turn if they guess a letter that is not in our puzzle', () => {
+    let player = new Player('Bob');
+    game.startRound();
+    game.checkLetter({target: {innerText: 'Z'}});
 
-  }); 
+    expect(player.isTurn).to.equal(false);
+  });
 
   it('should end a players turn if their spin value is "LOSE A TURN"', () => {
+    let player = new Player('Bob');
+    player.roundScore = 500;
+    game.currentWheelValue = 'LOSE A TURN';
 
-  }); 
+    expect(player.isTurn).to.equal(false);
+  });
 
   it('should end a players turn if their spin value is "BANKRUPTCY"', () => {
+    let player = new Player('Bob');
+    player.roundScore = 500;
+    game.currentWheelValue = 'BANKRUPT';
 
-  }); 
+    expect(player.isTurn).to.equal(false);
+  });
 
   it('should update the players total score if they solve the puzzle', () => {
 
-  }); 
+  });
 
   it('should get a new wheel and puzzle as we advance through rounds', () => {
 
-  }); 
+  });
 
   it('should end the game if a player quits the game', () => {
 
-  }); 
+  });
 
 })
