@@ -37,7 +37,7 @@ describe('Game', function () {
     expect(domUpdates.displayInstructions).to.have.been.called(1);
     expect(domUpdates.displayInstructions).to.have.been.called.with('Bob');
     expect(domUpdates.displayPlayerNames).to.have.been.called(1);
-    // expect(domUpdates.displayPlayerNames).to.have.been.called.with(playerArray); 
+    expect(domUpdates.displayPlayerNames).to.have.been.called.with(playerArray); 
   });
 
   it('should have a bank of puzzles', () => {
@@ -61,7 +61,8 @@ describe('Game', function () {
 
     expect(game.wheel).to.be.an('array').that.includes(game.currentWheelValue);
     expect(domUpdates.displayWheelValue).to.have.been.called(1);
-    // expect(domUpdates.dislayWheelValue).to.have.been.called.with(game.currentWheelValue);
+    console.log(domUpdates.displayWheelValue.__spy)
+    expect(domUpdates.dislayWheelValue).to.have.been.called.with(game.currentWheelValue);
   });
 
   it.skip('should let the player buy a vowel', () => {
