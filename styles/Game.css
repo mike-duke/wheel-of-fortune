@@ -150,6 +150,7 @@ main {
 
 .show-letter {
   color: #000;
+  transition: 0.5s  
 }
 
 .wheel-img {
