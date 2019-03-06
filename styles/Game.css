@@ -206,7 +206,8 @@ button:disabled {
 }
 
 .active {
-  background: rgba(255, 255, 255, 0.8);
+  border: 8px solid #e79e22;
+  transform: scale(1.1);
 }
 
  .player-name  {
