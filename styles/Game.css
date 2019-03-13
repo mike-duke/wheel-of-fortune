@@ -5,7 +5,7 @@
   src: url("fortune-wheel/fortune-wheel.ttf") format('truetype');
 }
 
-/*  Applied through out file  */
+/*  Applied throughout file  */
 
 * {
   font-size: 16px;
@@ -22,6 +22,14 @@ button {
   width: 200px;
   font-size: 1.4rem;
   cursor: pointer;
+}
+
+label, span, h4 {
+  font-size: 1.5rem;
+}
+
+h3, p {
+  margin: 5px 0;
 }
 
 /* Welcome page styling */
@@ -113,6 +121,7 @@ main {
 .top-row {
   display: flex;
   justify-content: space-between;
+  padding: 10px 20px;
 }
 
 .board {
@@ -160,8 +169,7 @@ main {
 
 .spin-button {
   position: absolute;
-  top: 24.5%;
-  left: 74%;
+  top: 122px;
 }
 
 /* User interaction elements */
@@ -200,9 +208,10 @@ button:disabled {
   width: 200px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 10%;
-  padding: 0 10px; 
+  padding: 20px 20px; 
 }
 
 .active {
@@ -225,6 +234,7 @@ button:disabled {
   grid-area: wheel;
   width: 60%;
   margin-left: 100px;
+  position: relative;
 }
 
 .wheel-output-container {
