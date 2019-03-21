@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/Game.css">
   <title>Div of Fortune!</title>
-  <title>Document</title>
 </head>
 
 <body>
@@ -31,16 +30,34 @@
     </div>
   </section>
 
+  <section class="round-summary-container">
+    <article class="round-summary">
+      <h2>Round <span class="round-number"></span> Over!</h2>
+      <h2><span class="round-winner"> </span>Wins!</h2>
+        <section class="player-area">
+            <article class="player-container">
+              <h3 class="round-summary-player-name player-one-name">Player 1</h3>
+              <p class="player-score">Total Score: <span class="total-score score-summary one">0</span></p>
+            </article>
+            <article class="player-container">
+              <h3 class="round-summary-player-name player-two-name">Player 2</h3>
+              <p class="player-score">Total Score: <span class="total-score score-summary two">0</span></p>
+            </article>
+            <article class="player-container">
+              <h3 class="round-summary-player-name player-three-name">Player 3</h3>
+              <p class="player-score">Total Score: <span class="total-score score-summary three">0</span></p>
+            </article>
+          </section>
+    </article>
+  </section>
+
   <main>
     <section class="top-row">
       <h4>Round 
         <span class="round-text">#</span>
       </h4>
-      <button class="quit-button">Quit Game</button>
+      <button class="quit-button">Quit</button>
     </section>
-    <article class="scoreboard">
-
-    </article>
     <section class="board">
       <div class="category-container">
         <h3 class="category">Category:
@@ -99,7 +116,7 @@
       </div>
       <article class="wheel-container">
         <img class="wheel-img" src="images/Wheel_of_Fortune_Round_1_template_Season_31.png">
-        <div class="wheel-output-container"><h2 class="wheel-output"> </h2></div>
+        $<div class="wheel-output-container"><h2 class="wheel-output"></h2></div>
         <button class="spin-button">Spin the Wheel!</button>
       </article>
     </section>
@@ -114,7 +131,9 @@
         <button class="solution-input-button">Solve!</button>
       </div>
     </article>
-    <h4 class="instruction-text">Play The Game!</h4>
+    <div class="instruction-text-container">
+      <h4 class="instruction-text">Play The Game!</h4>
+    </div>  
     <section class="keyboard">
       <button class="keyboard-button letterA vowel">A</button>
       <button class="keyboard-button letterB">B</button>
