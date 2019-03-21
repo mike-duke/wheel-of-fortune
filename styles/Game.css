@@ -122,16 +122,27 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
+  height: 20px;
 }
 
 .board {
   padding: 10px;
   display: grid;
   grid-template-areas: "category category" "puzzle wheel";
+  height: 400px;
 }
 
 .instruction-text {
   text-align: center;
+  background: #319d82;
+  border: 5px solid #FFF;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.instruction-text-container {
+  display: flex;
+  justify-content: center;
 }
 
 .puzzle-container {
@@ -169,7 +180,8 @@ main {
 
 .spin-button {
   position: absolute;
-  top: 122px;
+  top: 124px;
+  left: 47px;
 }
 
 /* User interaction elements */
@@ -229,12 +241,14 @@ button:disabled {
 
 .wheel-container {
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  /* align-items: center; */
+  /* flex-direction: column; */
   grid-area: wheel;
   width: 60%;
-  margin-left: 100px;
+  /* margin-left: 100px; */
   position: relative;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .wheel-output-container {
@@ -244,9 +258,42 @@ button:disabled {
 .wheel-output {
   font-family: "Fortune";
   font-size: 5rem;
-  margin: 10px 0 0;
+  margin:  25px 0;
+  width: 15px;
+  word-wrap: break-word;
 }
 
 .showPuzzleSquare {
   background: #FFF;
+}
+
+.round-summary-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.round-summary {
+  text-align: center;
+  position: absolute;
+  background: blue;
+  height: 60%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 25%;
+  left: 25%;
+  z-index: 2;
+  color: #FFF;
+}
+
+.quit-button {
+  width: auto;
 }
